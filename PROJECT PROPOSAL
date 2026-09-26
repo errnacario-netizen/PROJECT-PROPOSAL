@@ -1,1 +1,83 @@
+## I. Project Title
+EasyBudget: Simple Dailey Expense Tracker
 
+## II. Problem Statement
+Many students and young people struggle to keep track of their daily spending. They often do not know where their money goes, overspend on unnecessary things, and run out of money before the week ends. This affects their ability to save for important things and learn good money habits. It is a problem worth solving because learning to manage money early helps people become more responsible and financially stable in the future.
+
+## III. Project Objectives
+1. Create a simple tool that lets users record daily expenses and see a running total of their spending within 3 minutes of use.
+2. Help users stay within their set budget by showing a clear warning when they are close to or over their limit.
+3. Display a summary of total spending and remaining money at any time to help users make better spending decisions.
+
+## IV. Planned Features
+- Add and name expenses with an amount
+- Set a daily or weekly budget limit
+- View total money spent and remaining budget
+- See a simple summary of all recorded expenses
+- Get a message when nearing or exceeding the budget limit
+
+## V. Planned Inputs and Outputs
+
+*Inputs:*
+- User enters expense name and amount
+- User enters their budget amount
+- User chooses to view summary or exit
+
+*Outputs:*
+- Saves expense and updates total spent
+- Shows remaining budget
+- Displays full expense list and summary
+- Shows warning if budget is near or exceeded
+
+## VI. Logic Plan — Pseudocode
+
+```plaintext
+START
+  DISPLAY "Welcome to EasyBudget!"
+  ASK user for their budget amount
+  STORE budget
+  SET total_spent = 0
+  CREATE empty list for expenses
+
+  REPEAT
+    DISPLAY "--- MENU ---"
+    DISPLAY "1. Add Expense"
+    DISPLAY "2. View Summary"
+    DISPLAY "3. Exit"
+    ASK user to choose an option
+
+    IF option = 1 THEN
+      ASK for expense name
+      ASK for expense amount
+      ADD amount to total_spent
+      ADD name and amount to expenses list
+      CALCULATE remaining = budget - total_spent
+      DISPLAY "Expense added successfully!"
+      
+      IF total_spent > budget THEN
+        DISPLAY "WARNING: You have exceeded your budget!"
+      ELSE IF total_spent > budget * 0.8 THEN
+        DISPLAY "Note: You have used over 80% of your budget!"
+      END IF
+
+    ELSE IF option = 2 THEN
+      DISPLAY "===== EXPENSE SUMMARY ====="
+      DISPLAY "Total Budget: ", budget
+      DISPLAY "Total Spent: ", total_spent
+      DISPLAY "Remaining: ", budget - total_spent
+      DISPLAY "--- List of Expenses ---"
+      SHOW all expenses in the list
+      DISPLAY "==========================="
+
+    ELSE IF option = 3 THEN
+      DISPLAY "Thank you for using EasyBudget!"
+      END PROGRAM
+
+    ELSE
+      DISPLAY "Invalid choice. Please try again."
+    END IF
+  UNTIL user chooses to EXIT
+END
+Sent
+Compose
+Write to
