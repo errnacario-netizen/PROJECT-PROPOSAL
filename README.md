@@ -1,4 +1,3 @@
-# PROJECT-PROPOSAL
 
 # Student Daily Expense Tracker
 
